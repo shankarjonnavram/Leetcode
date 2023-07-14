@@ -5,6 +5,8 @@ class Solution:
         for i,a in enumerate(nums):
             if i>0 and a==nums[i-1]:
                 continue
+            if(a>0):
+                break
             left, right  = i+1 ,len(nums) -1
             while(left<right):
                 val = a+nums[left]+nums[right]
