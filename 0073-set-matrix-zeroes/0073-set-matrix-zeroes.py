@@ -44,7 +44,7 @@ class Solution:
                 if(matrix[i][0]==0 or matrix[0][j]==0):
                     matrix[i][j]=0
         '''
-        
+        First we do col row then we go with the row col 
         '''
         if(matrix[0][0]==0):
             for j in range(col_sz):
