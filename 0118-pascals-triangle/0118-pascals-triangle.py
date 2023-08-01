@@ -12,11 +12,13 @@ class Solution:
         # #     temp_lt.append(1)
         # #     output.append(temp_lt)
         # #     k+=1
-        output = []
-        for i in range(numRows):
-            temp_lt = [1]*(i+1)
+        output = [[1]]
+        for i in range(1,numRows):
+            # temp_lt = [1]*(i+1)
+            temp_lt = [1]
             for j in range(1,i):
-                temp_lt[j] = output[i-1][j-1]+output[i-1][j]
+                temp_lt.append(output[i-1][j-1]+output[i-1][j])
+            temp_lt.append(1)
             output.append(temp_lt)
         return output
                 
