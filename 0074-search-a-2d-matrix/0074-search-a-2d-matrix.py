@@ -18,17 +18,33 @@ class Solution:
         #     elif(matrix[rt][mid] < target):
         #         lt_ind = mid + 1
         # return exist
+        
+        # rows = len(matrix)
+        # cols = len(matrix[0])
+        # row_ind = 0
+        # col_ind = cols -1
+        # while(col_ind>=0 and row_ind<rows):
+        #     if(target>matrix[row_ind][col_ind]):
+        #         row_ind+=1
+        #     elif(target<matrix[row_ind][col_ind]):
+        #         col_ind-=1
+        #     elif(target == matrix[row_ind][col_ind]):
+        #         return True
+        # return False
+        
         rows = len(matrix)
         cols = len(matrix[0])
-        row_ind = 0
-        col_ind = cols -1
-        while(col_ind>=0 and row_ind<rows):
-            if(target>matrix[row_ind][col_ind]):
-                row_ind+=1
-            elif(target<matrix[row_ind][col_ind]):
-                col_ind-=1
-            elif(target == matrix[row_ind][col_ind]):
+        lt = 0
+        rt = (rows * cols) - 1
+        while(lt<=rt):
+            mid = (lt+rt)//2
+            # row_index = mid//cols and col_index = mid%cols
+            if(matrix[mid//cols][mid%cols]==target):
                 return True
+            elif(matrix[mid//cols][mid%cols]>target):
+                rt-=1
+            else:
+                lt+=1
         return False
                 
             
