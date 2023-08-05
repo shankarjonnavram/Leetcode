@@ -24,18 +24,14 @@ class Solution:
         maxm = 1
         for i in nums:
             st.add(i)
-        for i in nums:
-            if(i-1 in st):
-                continue
-            else:
+        for i in st:
+            if(i-1 not in st):
                 ct=1
-                while(True):
-                    i = i+1
-                    if(i in st):
-                        ct+=1
-                    else:
-                        maxm = max(maxm,ct)
-                        break
+                while(i+1 in st):
+                    ct+=1
+                    i+=1
+                maxm = max(ct,maxm)
+                
         return maxm
                     
             
