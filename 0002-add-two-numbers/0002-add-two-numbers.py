@@ -30,16 +30,19 @@ class Solution:
                 l1.val = each_sum
                 extra_val = 0
             l1 = l1.next
+        if(l2!=None):
+            old.next = l2
         while(l2!=None):
             each_sum = extra_val + l2.val
-            print(each_sum)
             if(each_sum >= 10):
                 temp_val = each_sum - 10
-                old.next = ListNode(temp_val)
+                # old.next = ListNode(temp_val)
+                old.next.val = temp_val
                 extra_val = 1
                 old = old.next
             else:
-                old.next = ListNode(each_sum)
+                # old.next = ListNode(each_sum)
+                old.next.val = each_sum
                 extra_val = 0
                 old = old.next
             l2 = l2.next
