@@ -22,21 +22,38 @@ class Solution:
         # prev_node.next = None
         # return head
         
-        tmp = head
-        rem = head
-        ct = 0 
-        while(tmp!=None):
-            tmp = tmp.next
-            ct+=1
-        n = ct - n 
-        if(n==0):
-            return head.next
-        old = None
-        while(n>0):
-            old = rem
-            rem = rem.next
-            n-=1
-        old.next = rem.next
+        # tmp = head
+        # rem = head
+        # ct = 0 
+        # while(tmp!=None):
+        #     temp_ct = n
+        #     tmp = tmp.next
+        #     ct+=1
+        # n = ct - n 
+        # if(n==0):
+        #     return head.next
+        # old = None
+        # while(n>0):
+        #     old = rem
+        #     rem = rem.next
+        #     n-=1
+        # old.next = rem.next
+        # return head
+        
+        fast = head
+        slow = head
+        
+        # First moving fast pointer by n points . Thne moving both fast and slow                 pointers by one point each
+        
+        for i in range(n):
+            fast = fast.next
+        if(fast == None):
+            return slow.next
+        while(fast.next!=None):
+            fast = fast.next
+            slow = slow.next
+        
+        slow.next = slow.next.next
         return head
             
         
