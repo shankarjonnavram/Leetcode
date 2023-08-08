@@ -6,8 +6,8 @@
 
 class Solution:
     def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:
-        if(headA==headB):
-            return headB
+        # if(headA==headB):
+        #     return headB
         lt1 = []
         lt2 = []
         print(1)
