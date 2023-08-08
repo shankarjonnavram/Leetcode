@@ -25,20 +25,20 @@ class Solution:
         # return True
         slow , fast = head , head
         prev , new = None , None
-        while(fast.next!=None and fast.next.next!=None):
+        while fast and fast.next:
             fast = fast.next.next
             new = slow.next
             slow.next = prev 
             prev = slow
             slow = new
-        if(fast.next!=None):
-            new = slow.next
-            slow.next = prev 
-            prev = slow
-            slow = new
-        else:
+        # if(fast.next!=None):
+        #     new = slow.next
+        #     slow.next = prev 
+        #     prev = slow
+        #     slow = new
+        if fast:
             slow = slow.next
-        while(slow!= None):
+        while slow:
             if(slow.val!=prev.val):
                 return False
             slow = slow.next
