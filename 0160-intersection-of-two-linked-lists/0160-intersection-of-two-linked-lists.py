@@ -21,14 +21,16 @@ class Solution:
         d1 = headA
         d2 = headB
         while(d1!=d2):
-            d1 = d1.next
-            d2 = d2.next
-            if(d1==None and d2==None):
-                return d1
-            elif(d1==None):
-                d1=headB
-            elif(d2==None):
-                d2 = headA
+            # d1 = d1.next
+            # d2 = d2.next
+            # if(d1==None and d2==None):
+            #     return d1
+            # elif(d1==None):
+            #     d1=headB
+            # elif(d2==None):
+            #     d2 = headA
+            d1 = d1.next if d1 else headB
+            d2 = d2.next if d2 else headA
         return d1
 
         
