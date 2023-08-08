@@ -8,11 +8,11 @@ class Solution:
     def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:
         # if(headA==headB):
         #     return headB
-        lt1 = []
+        lt1 = {}
         temp = headA
         tp = headB
         while(temp!=None):
-            lt1.append(temp)
+            lt1[temp] = 1
             temp = temp.next
         while(tp!=None):
             if tp in lt1:
