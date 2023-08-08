@@ -7,11 +7,6 @@ class Solution:
     def isPalindrome(self, head: Optional[ListNode]) -> bool:
         if(head.next==None):
             return True
-        if(head.next.next==None):
-            if(head.val == head.next.val):
-                return True
-            else:
-                return False
         slow , fast = head , head
         ct =0
         lt = []
@@ -23,7 +18,6 @@ class Solution:
         if(fast.next!=None):
             lt.append(slow.val)
             ct+=1
-            print(lt)
         while(slow.next!=None):
                 slow = slow.next
                 if(slow.val!=lt[ct-1]):
