@@ -10,7 +10,8 @@ class Solution:
             if(nums[i]!=nums[i-1]):
                 nums[ct] = nums[i]
                 ct+=1
-        for i in range(ct,sz):
-            nums.pop(ct)
+        while(ct<sz):
+            nums.pop(sz-1)
+            sz-=1
        
             
