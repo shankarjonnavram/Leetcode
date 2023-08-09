@@ -31,12 +31,12 @@ class Solution:
         k = k % sz
         k = sz - k
         dummy.next = head
-        temp = head
-        while(k>1):
-            temp = temp.next
+        # temp = head
+        while(k>0):
+            dummy = dummy.next
             k-=1
-        head = temp.next
-        temp.next = None
+        head = dummy.next
+        dummy.next = None
         return head
         
         
