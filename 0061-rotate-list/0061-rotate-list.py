@@ -35,9 +35,9 @@ class Solution:
         while(k>0):
             dummy = dummy.next
             k-=1
-        head = dummy.next
+        newhead = dummy.next
         dummy.next = None
-        return head
+        return newhead
         
         
         
