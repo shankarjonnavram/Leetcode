@@ -7,20 +7,20 @@ class Solution:
         ch = 0 
         cook = 0
         ct = 0
-        # while(cook<cookie_sz and ch < child_sz):
-        #     if(s[cook]>=g[ch]):
+        # for i in range(child_sz):
+        #     if(cook == cookie_sz):
+        #         break
+        #     while(cook<cookie_sz and s[cook]<g[i]):
+        #         cook+=1
+        #     if(cook<cookie_sz and s[cook]>=g[i]):
         #         ct+=1
         #         cook+=1
-        #         ch+=1
-        #     else:
-        #         break
-        for i in range(child_sz):
-            if(cook == cookie_sz):
-                break
-            while(cook<cookie_sz and s[cook]<g[i]):
+        while(ch<child_sz and cook<cookie_sz):
+            if(s[cook]<g[ch]):
                 cook+=1
-            if(cook<cookie_sz and s[cook]>=g[i]):
+            else:
                 ct+=1
                 cook+=1
+                ch+=1
         return ct
     
